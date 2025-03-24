@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主頁面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .content {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>歡迎來到主頁面</h1>
+        <p>這是一個示例頁面，右下角有聊天功能。</p>
+        <p>你可以點擊聊天圖標來開始對話。</p>
+    </div>
+
+    <!-- 引入聊天圖標組件 -->
+    {% include 'chat_icon.html' %}
+</body>
+</html>
