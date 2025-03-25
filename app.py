@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify, request
+from chat_tool.query.chatgpt import query_chatgpt
 
 app = Flask(__name__)
 
@@ -13,7 +14,8 @@ def send_message():
     
     # 這裡可以添加聊天機器人的邏輯
     # 目前簡單返回一個固定回覆
-    bot_response = f"收到你的訊息：{user_message}"
+
+    bot_response = query_chatgpt(user_message)
     
     return jsonify({
         'response': bot_response
