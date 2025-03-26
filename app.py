@@ -12,7 +12,6 @@ def home():
 @app.route('/send_message', methods=['POST'])
 def send_message():
     data = request.json
-    print(data)
     user_message = data.get('message', '')
     
     # 這裡可以添加聊天機器人的邏輯
@@ -26,13 +25,8 @@ def send_message():
 
 @app.route('/ycm_chat_icon.js')
 def serve_js():
-    print(456)
     response = send_from_directory('static/js', 'ycm_chat_icon.js')
     response.headers['Access-Control-Allow-Origin'] = '*'  # 響應跨域
-    response.headers['Access-Control-Allow-Credentials'] = 'true'
-    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
-    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
-    print(123)
     return response
 
 
