@@ -142,7 +142,7 @@
         
         chatIconDiv.innerHTML = `
             <div class="chat-button">
-                <img src="/static/images/ycm_logo.png" alt="YCM Logo" width="48" height="48">
+                <img src="http://192.168.33.68:5000/static/images/ycm_logo.png" alt="YCM Logo" width="48" height="48">
             </div>
 
             <div class="chat-window hidden">
@@ -191,7 +191,7 @@
             appendMessage(message, 'user-message');
 
             // 發送消息到後端
-            fetch('/send_message', {
+            fetch('http://192.168.33.68:5000/send_message', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
