@@ -3,7 +3,7 @@ from chat_tool.query.chatgpt import query_chatgpt
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app) # 允許跨域
+CORS(app, resources={r"/*": {"origins": "*"}}) # 允許跨域
 
 @app.route('/')
 def home():
@@ -26,8 +26,13 @@ def send_message():
 
 @app.route('/ycm_chat_icon.js')
 def serve_js():
+    print(456)
     response = send_from_directory('static/js', 'ycm_chat_icon.js')
     response.headers['Access-Control-Allow-Origin'] = '*'  # 響應跨域
+    response.headers['Access-Control-Allow-Credentials'] = 'true'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
+    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
+    print(123)
     return response
 
 

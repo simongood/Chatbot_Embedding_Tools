@@ -142,9 +142,10 @@
         const chatIconDiv = document.createElement('div');
         chatIconDiv.id = 'chat_icon';
         
+        alert(baseUrl);
         chatIconDiv.innerHTML = `
             <div class="chat-button">
-                <img src="${baseUrl}/static/images/ycm_logo.png" alt="YCM Logo" width="48" height="48">
+                <img src="${baseUrl}/static/images/Lulu talk.png" alt="YCM Logo" width="48" height="48">
             </div>
 
             <div class="chat-window hidden">
@@ -252,10 +253,6 @@
         initEvents();
     }
 
-    // 監聽 DOM 內容加載完成後初始化，在頁面完全加載後才初始化的安全機制
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initChatIcon);
-    } else {
-        initChatIcon();
-    }
+    // 初始化
+    initChatIcon();
 })();
