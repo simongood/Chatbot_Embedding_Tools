@@ -5,6 +5,8 @@
 
 // 立即執行函數以避免變數污染全局命名空間
 (function() {
+    const baseUrl = 'https://ca06-211-72-135-157.ngrok-free.app';
+
     // 添加樣式到頭部
     function addStyles() {
         const styleElement = document.createElement('style');
@@ -142,7 +144,7 @@
         
         chatIconDiv.innerHTML = `
             <div class="chat-button">
-                <img src="http://192.168.33.68:5000/static/images/ycm_logo.png" alt="YCM Logo" width="48" height="48">
+                <img src="${baseUrl}/static/images/ycm_logo.png" alt="YCM Logo" width="48" height="48">
             </div>
 
             <div class="chat-window hidden">
@@ -191,7 +193,7 @@
             appendMessage(message, 'user-message');
 
             // 發送消息到後端
-            fetch('http://192.168.33.68:5000/send_message', {
+            fetch(`${baseUrl}/send_message`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

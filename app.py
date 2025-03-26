@@ -5,7 +5,6 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app) # 允許跨域
 
-
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -25,7 +24,7 @@ def send_message():
         'response': bot_response
     })
 
-@app.route('/static/js/ycm_chat_icon.js')
+@app.route('/ycm_chat_icon.js')
 def serve_js():
     response = send_from_directory('static/js', 'ycm_chat_icon.js')
     response.headers['Access-Control-Allow-Origin'] = '*'  # 響應跨域
