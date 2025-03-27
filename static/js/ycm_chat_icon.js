@@ -5,7 +5,7 @@
 
 // 立即執行函數以避免變數污染全局命名空間
 (function() {
-    const baseUrl = 'http://192.168.1.110:5000';
+    const baseUrl = 'http://192.168.33.68:5000';
 
     // 添加樣式到頭部
     function addStyles() {
@@ -130,7 +130,7 @@
             }
 
             #chat_icon #send-button:hover {
-                font-weight: bold;
+                transform: scale(1.3);
             }
         `;
         document.head.appendChild(styleElement);
@@ -152,11 +152,11 @@
                     <span class="close-button">&times;</span>
                 </div>
                 <div class="chat-messages">
-                    <div class="bot-message">您好！我是聊天機器人，有什麼我可以幫您的嗎？</div>
+                    <div class="bot-message">您好！我是 YCM。我可以回答與黴菌相關的問題。有什麼我可以幫助你的嗎？</div>
                 </div>
                 <div class="chat-input-area">
                     <input type="text" id="user-input" placeholder="輸入訊息...">
-                    <button id="send-button">發送</button>
+                    <button id="send-button">🌳</button>
                 </div>
             </div>
         `;

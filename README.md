@@ -14,6 +14,8 @@
 在想加入 icon 的 html body 中 加入
 ```
 <!-- 引入聊天圖標組件 -->
-    {% include 'chat_icon.html' %}
+    <script src="https://example.com/ycm_chat_icon.js"></script>
 ```
 
+## 注意
+每次改動需到 static/js/ycm_chat_icon.js 中改動 baseUrl = ''
